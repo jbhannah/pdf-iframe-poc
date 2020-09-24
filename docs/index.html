@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PDF iframe proof-of-concept</title>
+    <meta charset="utf-8" />
+    <style>
+      .ansi-a {
+        height: 0;
+        max-width: 100%;
+        padding-bottom: calc(min(100%, 500px) * (11 / 8.5));
+        position: relative;
+        width: 500px;
+      }
+
+      .ansi-a iframe {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+
+      iframe {
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>PDF iframe proof-of-concept</h1>
+    <p>
+      The PDF below should display in an iframe using the browser or native
+      app's web view (e.g. WKWebView) without cross-origin restrictions, scaled
+      to show a single, standard ANSI A (US letter, 8.5&Prime;&times;11&Prime;)
+      page at a width of 100% of the container or 500 pixels, whichever is
+      smaller.
+    </p>
+    <div class="ansi-a">
+      <iframe
+        src="https://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf"
+        allowfullscreen
+      >
+        iframes are not supported in this browser.
+      </iframe>
+    </div>
+  </body>
+</html>
